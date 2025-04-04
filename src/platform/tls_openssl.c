@@ -3154,8 +3154,7 @@ more_handshake:
         }
 
         OSSL_DBG("Checking Read/Write key level\n");
-        if (TlsContext->State->ReadKey == QUIC_PACKET_KEY_1_RTT &&
-            TlsContext->State->WriteKey == QUIC_PACKET_KEY_1_RTT) {
+        if (TlsContext->State->WriteKey == QUIC_PACKET_KEY_1_RTT) {
             OSSL_DBG("HANDSHAKE COMPLETE\n");
             QuicTraceLogConnInfo(
                 OpenSslHandshakeComplete,
